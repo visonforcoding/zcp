@@ -16,6 +16,12 @@
             <file>file:/E:/web/php/Zcp/Model.php</file>
             <file>file:/E:/web/php/Zcp/HttpRequest.php</file>
             <file>file:/E:/web/php/cli-config.php</file>
+            <file>file:/E:/web/php/Utils/HttpClient.php</file>
+            <file>file:/E:/web/php/Utils/Weixin/WeixinSdk.php</file>
+            <file>file:/E:/web/php/Utils/Cache/Cache.php</file>
+            <file>file:/E:/web/php/Entity/Product.php</file>
+            <file>file:/E:/web/php/Apps/Home/Controller/IndexController.php</file>
+            <file>file:/E:/web/php/Data/wxaccesstoken.php</file>
         </group>
     </open-files>
 </project-private>
