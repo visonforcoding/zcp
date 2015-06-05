@@ -1,0 +1,7 @@
+<?php
+namespace Zcp;
+class Controller{
+    public function render(){
+        
+    }
+}

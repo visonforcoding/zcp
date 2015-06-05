@@ -1,0 +1,14 @@
+<?php
+    define('BASE_PATH',  dirname(__FILE__));
+    require_once './Zcp/AutoLoader.php';
+    require_once './vendor/autoload.php';
+    Twig_Autoloader::register();
+    Zcp\AutoLoader::load();
+//    var_dump($_SERVER);
+//    var_dump($request->getRequestType());
+//    var_dump($request->getPathInfo());
+    $zcp = new Zcp\Bootstrap();
+    $zcp->start();
+
+    
+    

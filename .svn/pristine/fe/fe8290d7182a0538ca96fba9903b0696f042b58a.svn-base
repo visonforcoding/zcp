@@ -1,0 +1,10 @@
+<?php
+
+namespace Apps\Admin\Controller;
+use Zcp\Controller;
+class IndexController extends Controller{
+    
+    public function index(){
+        var_dump(__FILE__);
+    }
+}

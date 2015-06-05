@@ -1,0 +1,47 @@
+<?php
+
+namespace Zcp;
+
+use Zcp\Route;
+use Zcp\HttpRequest;
+use Zcp\File\Config;
+
+final class Bootstrap {
+
+    protected $request;
+    protected $pathInfo;
+    protected $route;
+    protected static $config;
+    protected $em;
+
+    public function __construct() {
+        $this->route = new Route();
+        $this->registryService();
+    }
+
+    public function start() {
+
+        //路由
+        $moduleName = $this->route->getModuleName();
+        $controllerName = $this->route->getControllerName();
+        $actionName = $this->route->getActionName();
+        $controllerClassName = '\\Apps\\' . $moduleName . '\\' . 'Controller\\' . $controllerName . 'Controller';
+        $controller = new $controllerClassName();
+        $controller->$actionName();
+    }
+
+    public function registryService() {
+        self::$config = new Config(BASE_PATH . '/Config/config.yml');
+    }
+
+    public static function getConfig() {
+        return self::$config;
+    }
+
+    public function setEm() {
+        //读取配置
+        $configAdapter = new Config(BASE_PATH . '/Config/config.yml');
+        $config = $configAdapter->load('database');
+    }
+
+}

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Encoding     :   UTF-8
+ * Created on   :   2015-5-24 0:28:44 by 曹文鹏 , caowenpeng1990@126.com
+ */
+
+namespace Apps\Home\Controller;
+
+use Zcp\Controller;
+use Utils\HttpClient;
+use Entity\Product;
+
+class IndexController extends Controller {
+
+    public function index() {
+        $testDoctrine = false;
+        if ($testDoctrine) {
+            $product = new Product();
+            $product->setName('cwp');
+            $this->em->persist($product);
+            $this->em->flush();
+            if ($product->getId()) {
+                echo '插入成功！';
+            } else {
+                echo '插入失败！';
+            }
+        }
+        $this->render('index.twig', array(
+            'title' => '测试'
+        ));
+    }
+
+    public function test() {
+        $httpClient = new HttpClient();
+        $url = 'http://www.baidu.com';
+        $douban = $httpClient->request($url);
+    }
+
+}

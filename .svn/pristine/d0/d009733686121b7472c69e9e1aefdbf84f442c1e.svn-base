@@ -1,0 +1,12 @@
+<?php
+    print 'demo test page';
+    
+    require_once './Zcp/AutoLoader.php';
+    Zcp\AutoLoader::load();
+//    $request = new \Zcp\HttpRequest();
+//    var_dump($_SERVER);
+//    var_dump($request->getRequestType());
+//    var_dump($request->getPathInfo());
+    $route = new Zcp\Route();
+    var_dump($route->run());
+    

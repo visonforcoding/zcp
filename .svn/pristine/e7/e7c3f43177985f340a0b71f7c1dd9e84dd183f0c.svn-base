@@ -1,0 +1,15 @@
+<?php
+
+/**
+* Encoding     :   UTF-8
+* Created on   :   2015-5-24 0:28:44 by 曹文鹏 , caowenpeng1990@126.com
+*/
+namespace Apps\Home\Controller;
+use Zcp\Controller;
+class IndexController extends Controller{
+    public function index(){
+        $this->render('index.twig',array(
+            'title'=>'测试'
+        ));
+    }
+}

@@ -1,0 +1,29 @@
+<?php
+
+namespace Zcp;
+use Zcp\HttpRequest;
+class Route{
+    
+    protected $pathInfo;
+    protected $request;
+    protected $moduleName;
+    protected $controllerName;
+    protected $actionName;
+
+
+    public function __construct() {
+        $this->request = new HttpRequest();
+        $this->pathInfo = $this->request->getPathInfo();
+    }
+    public function run(){
+        $path_arr = explode('/',$this->pathInfo);
+        $moduleName = $path_arr[1];
+        $controllerName = $path_arr[2];
+        $controllerName = 'Index';
+        $actionName = $path_arr[3];
+        
+        $controllerClassName = '\\Apps\\'.$moduleName.'\\'.'Controller\\'.$controllerName.'Controller';
+        $controller = new $controllerClassName();
+        
+    }
+}

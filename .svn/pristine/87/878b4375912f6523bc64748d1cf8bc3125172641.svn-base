@@ -1,0 +1,13 @@
+<?php
+namespace Zcp;
+use Zcp\Route;
+class Controller{
+    
+    public function render(){
+        
+    }
+    
+    public function getControllerName(){
+        
+    }
+}

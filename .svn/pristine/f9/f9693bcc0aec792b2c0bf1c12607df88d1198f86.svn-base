@@ -1,0 +1,13 @@
+## YAML Template.
+---
+foo : bar
+database :
+    entityDir : Entity
+    debug : false
+    dbparam :
+           driver : pdo_mysql
+           host : 127.0.0.1
+           user : root
+           password  : 123456
+           dbname : zcp
+    

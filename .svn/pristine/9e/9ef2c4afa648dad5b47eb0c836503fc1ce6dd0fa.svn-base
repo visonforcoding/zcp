@@ -1,0 +1,7 @@
+<?php
+namespace Utils;
+class HttpClient{
+    public function __construct() {
+        print_r(__NAMESPACE__.__CLASS__);
+    }
+}

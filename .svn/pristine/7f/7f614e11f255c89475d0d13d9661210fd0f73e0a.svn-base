@@ -1,0 +1,64 @@
+<?php
+
+namespace Zcp;
+use Zcp\HttpRequest;
+class Route{
+    
+    protected $pathInfo;
+    protected $request;
+    protected $moduleName;
+    protected $controllerName;
+    protected $actionName;
+
+
+    public function __construct() {
+        $this->request = new HttpRequest();
+        $this->pathInfo = $this->request->getPathInfo();
+        var_dump(__FILE__);
+    }
+    
+    /**
+     *
+     */
+    public function run(){
+        var_dump(__FUNCTION__);
+        $path_arr = explode('/',$this->pathInfo);
+        $moduleName = $path_arr[1];
+        $controllerName = $path_arr[2];
+        $actionName = $path_arr[3];
+        $this->moduleName = $moduleName;
+        $this->controllerName = $controllerName;
+        $this->actionName = $actionName;
+        $controllerClassName = '\\Apps\\'.$moduleName.'\\'.'Controller\\'.$controllerName.'Controller';
+        $controller = new $controllerClassName();
+        $controller->$actionName();
+        var_dump(__FUNCTION__);
+    }
+    
+    
+    /**
+     * 返回模块名
+     * @return type
+     */
+    public function getModuleName(){
+        return $this->moduleName;
+    }
+    
+    /**
+     * 返回控制器名
+     * @return type
+     */
+    public function getControllerName(){
+        return $this->controllerName; 
+    }
+    
+    
+    /**
+     * 返回动作名
+     * @return type
+     */
+    public function getActionName(){
+        return $this->actionName;
+    }
+            
+}

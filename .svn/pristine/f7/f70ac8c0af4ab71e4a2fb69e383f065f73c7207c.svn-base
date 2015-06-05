@@ -1,0 +1,7 @@
+; this is an INI file
+[section]
+key = value
+
+[database]
+basetype = mysql
+key = fuck
